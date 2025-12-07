@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: radial-gradient(rgba(22, 1, 34, 1) 100.3%);
+}
+
+
+
+    
+         .btn-grad {background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%)}
+         .btn-grad {
+            margin: 10px;
+            margin-top: 20px;
+            padding: 15px 45px;
+            width: 250px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 10px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+      
+
+          .linehed{
+
+            line-height: 35px;
+          }
+
+
+          .createImage{
+
+            box-shadow: 0 0 5px 2px violet;
+             display: inline-block; 
+  animation: pop 5s ease-in-out infinite;
+          }
+
+         
+
+
+          @keyframes pop {
+
+            0%{
+
+              transform: scale(1);
+            }
+
+            50%{
+
+              transform: scale(1.1);
+
+            }
+
+         
+
+            100%{
+
+              transform: scale(1);
+            }
+            
+          }
+
+          header{
+              background-image: radial-gradient(rgba(22, 1, 34, 1) 100.3%);
+
+
+          }
+          /* .createpara{
+
+background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(178,0,184,1) 0%, rgba(71,0,159,1) 90% );
+          } */
+
+          .createpara {
+  background-image: radial-gradient(
+    circle at 10% 20%,
+    rgba(178,0,184,1) 0%,
+    rgba(71,0,159,1) 90%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card1{
+
+background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(20,12,239,1) 0%, rgba(198,253,249,1) 90% );}
+
+
+
+.card1 {
+  position: relative;
+}
+
+.card1::after, .card1::before{
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background: conic-gradient(from var(--angle), transparent 50%,white);
+  z-index: -1;
+}
+
+.card1::before{
+  z-index: -2;
+  filter: blur(20px);
+  opacity: 0.7;
+}
+
+.card1:hover::after{
+  animation: glowing-border 3.5s linear infinite;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+
+.card1:hover::before{
+  animation: blur-effect 3.5s linear infinite;
+}
+
+@keyframes blur-effect {
+  from { filter: blur(20px); }
+  to   { filter: blur(19px); }
+}
